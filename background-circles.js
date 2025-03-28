@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Alternate between first and second gradient
       circle.classList.add(i % 2 === 0 ? 'first-gradient' : 'second-gradient');
   
-      // Randomize size
+      // Randomize size 
       const size = Math.random() * 200 + 100; // 100-300px
       circle.style.width = `${size}px`;
       circle.style.height = `${size}px`;

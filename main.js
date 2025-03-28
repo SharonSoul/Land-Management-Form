@@ -3,4 +3,4 @@
 //     speed: 400,
 //     glare: true,
 //     "max-glare": .5
-//   });
+//   }); 
