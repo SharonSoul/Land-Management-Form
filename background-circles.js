@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const body = document.body;
-    const circleCount = 10;
+    const circleCount = 15;
   
     for (let i = 0; i < circleCount; i++) {
       const circle = document.createElement('div');
