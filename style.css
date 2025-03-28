@@ -363,75 +363,133 @@ body::after {
   margin-left: auto;
 }
 
-/* Responsive Design */
+/* Mobile Responsive Adjustments */
 @media screen and (max-width: 768px) {
-  .card {
-    width: 100%;
-    margin: 10px;
-    min-height: auto;
+  body {
+    overflow-y: auto; /* Allow vertical scrolling */
+    position: relative;
   }
-  
+
+  /* Disable background circle animations on mobile */
+  .background-circle {
+    display: none;
+  }
+
+  body::before,
+  body::after {
+    display: none;
+  }
+
+  .container {
+    height: auto;
+    min-height: 100vh;
+    padding: 20px 10px;
+    overflow-x: hidden;
+  }
+
+  .card {
+    width: 95%; /* Slightly less than full width */
+    max-width: 500px; /* Prevent becoming too wide on larger mobile screens */
+    margin: 20px 10px;
+    min-height: auto;
+    padding: 15px;
+  }
+
   .form-row {
     flex-direction: column;
   }
-  
+
   .form-column {
     width: 100%;
   }
-  
+
+  .form-column input,
+  .form-column select {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px; /* Prevent zoom on input focus */
+  }
+
   .container-button {
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
   }
-  
+
   .btn {
     width: 100%;
     padding: 20px 40px;
   }
-  
-  .login-heading {
-    font-size: 1.5rem;
 
+  .login-heading {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
   }
-  
+
   .header-area {
     flex-direction: column;
     align-items: flex-start;
   }
-  
+
   .id-section {
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
   }
-  
+
   .oe_avatar {
     margin-left: 0;
     align-self: center;
   }
-  
+
   .oe_button_box {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
+    gap: 10px;
   }
-  
+
   .oe_stat_button {
     width: 100%;
     margin-bottom: 10px;
+    justify-content: center;
+  }
+
+  /* Ensure inputs don't zoom on focus */
+  input, select, textarea {
+    font-size: 16px;
   }
 }
 
-/* Mobile Responsive Design */
+/* Extra small mobile devices */
 @media screen and (max-width: 480px) {
   .card {
     padding: 10px;
+    width: 98%;
+    margin: 10px 5px;
   }
-  
-  .form-column input,
-  .form-column select {
-    padding: 10px;
-  }
-  
+
   .login-heading {
     font-size: 1.2rem;
+  }
+
+  .form-column input,
+  .form-column select {
+    padding: 8px;
+    margin-top: 8px;
+  }
+
+  .btn {
+    padding: 15px 30px;
+  }
+}
+
+/* Ensure body is scrollable and prevent any potential overflow issues */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Prevent automatic zoom on input focus for iOS */
+@media screen and (max-width: 768px) {
+  input, select, textarea {
+    font-size: 16px;
   }
 }
