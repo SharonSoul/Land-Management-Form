@@ -96,6 +96,7 @@ body::after {
   margin-bottom: 20px;
   text-align: center;
   width: 100%;
+  font-size: 1.5rem;
 }
 
 /* Form Wrapper */
@@ -266,29 +267,31 @@ body::after {
 
 /* Status Badge Styles */
 .status-badge {
-  width: 100%;
+  width: 30%;
   text-align: center;
   color: white;
-  background: rgba(255,255,255,0.1);
+  background: linear-gradient(90deg, #4B0082, #6A5ACD);
   padding: 10px;
   margin-bottom: 15px;
   border-radius: 10px;
   backdrop-filter: blur(5px);
+  display: flex;
+  align-self: self-start;
 }
 
 /* Stat Button Box */
 .oe_button_box {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   gap: 20px;
   width: 100%;
-  margin-bottom: 15px;
+  margin: 5px 0px 15px 0px;
 }
 
 .oe_stat_button {
   display: flex;
   align-items: center;
-  background: rgba(255,255,255,0.1);
+  background: linear-gradient(rgba(139, 69, 19, 0.3), rgba(210, 105, 30, 0.3)); /* Adjust the 0.7 for more/less transparency */
   border: none;
   border-radius: 10px;
   padding: 10px 15px;
@@ -296,6 +299,7 @@ body::after {
   backdrop-filter: blur(5px);
   transition: transform 0.3s ease;
 }
+
 
 .oe_stat_button:hover {
   transform: scale(1.05);
@@ -387,6 +391,7 @@ body::after {
   
   .login-heading {
     font-size: 1.5rem;
+
   }
   
   .header-area {
