@@ -1,0 +1,432 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Background Gradient Circles */
+body::before,
+body::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: blur(300px); /* Increased blur for softer edges */
+  opacity: 0.4; /* Reduced opacity for less intensity */
+}
+
+body::before {
+  background: linear-gradient(#8B4513, #D2691E);
+  clip-path: circle(30% at 99% 10%);
+}
+
+body::after {
+  background: linear-gradient(90deg, #4B0082, #6A5ACD);
+  clip-path: circle(25% at 10% 80%);
+}
+
+/* Background Decorative Circles */
+.background-circle {
+  position: fixed;
+  border-radius: 50%;
+  opacity: 0.1;
+  z-index: 2;
+  filter: blur(2px);
+  animation: float-circle 10s infinite alternate ease-in-out;
+}
+
+/* First set of circles - Brown/Orange gradient */
+.background-circle.first-gradient {
+  background: linear-gradient(#8B4513, #D2691E);
+}
+
+/* Second set of circles - Purple gradient */
+.background-circle.second-gradient {
+  background: linear-gradient(90deg, #4B0082, #6A5ACD);
+}
+
+/* Floating animation */
+@keyframes float-circle {
+  0% {
+    transform: translateY(0) translateX(0) scale(0.7);
+  }
+  100% {
+    transform: translateY(-50px) translateX(50px) scale(1.2);
+  }
+}
+
+/* Container Styles */
+.container {
+  height: 100vh;
+  width: 100%;
+  background: #161623;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Card Styles */
+.card {
+  position: relative;
+  width: 800px;
+  min-height: 600px;
+  margin: 30px;
+  box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+  border-radius: 15px;
+  background: rgba(255,255,255,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid rgba(255,255,255,0.5);
+  border-left: 1px solid rgba(255,255,255,0.5);
+  backdrop-filter: blur(5px);
+  z-index: 1;
+  padding: 20px;
+}
+
+/* Heading Styles */
+.login-heading {
+  color: white;
+  margin-bottom: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+/* Form Wrapper */
+.input-wrapper {
+  width: 100%;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.form-column {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Input and Select Styles */
+.form-column input,
+.form-column select {
+  margin-top: 15px;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.1);
+  border-top: 1px solid rgba(255,255,255,0.5);
+  border-left: 1px solid rgba(255,255,255,0.5);
+  backdrop-filter: blur(5px);
+  z-index: 1;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.form-column input::placeholder,
+.form-column select {
+  color: white;
+  opacity: .5;
+}
+
+.form-column input:focus,
+.form-column select:focus {
+  outline: none;
+  transform: scale(1.02);
+}
+
+.form-column select option {
+  background: #161623;
+  color: white;
+}
+
+/* Button Container */
+.container-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+  gap: 30px;
+}
+
+/* Button Styles */
+.btn {
+  position: relative;
+  display: inline-block;
+  border: none;
+  border-radius: 50px;
+  background: none;
+  padding: 25px 75px;
+  margin: 0;
+}
+
+.btn a {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, .05);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, .2);
+  border-top: 1px solid rgba(255, 255, 255, .1);
+  border-bottom: 1px solid rgba(255, 255, 255, .1);
+  border-radius: 30px;
+  color: #fff;
+  z-index: 1;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-decoration: none;
+  overflow: hidden;
+  text-transform: uppercase;
+  transition: all .3s ease-in-out;  
+  backdrop-filter: blur(15px);
+}
+
+.btn:hover a {
+  letter-spacing: 3px;
+}
+
+.btn a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to left, rgba(255, 255, 255, .15), transparent);
+  transform: skewX(40deg) translateX(0);
+  transition: all .5s ease-out;
+}
+
+.btn:hover a::before {
+  transform: skewX(40deg) translateX(200%);
+}
+
+.btn::before,
+.btn::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 0px;
+  border-radius: 10px;
+  background: #f00;
+  transition: all .4s ease-in-out;
+  transition-delay: 0s;
+}
+
+.btn::before {  
+  bottom: -5px;
+}
+
+.btn::after {
+  top: -5px;
+}
+
+.btn:hover::before,
+.btn:hover::after {  
+  height: 50%;
+  width: 80%;
+  border-radius: 30px;
+  transition-delay: .3s;
+}
+
+.btn:hover::before {
+  bottom: 0;
+}
+
+.btn:hover::after {
+  top: 0;
+}
+
+.btn:nth-child(1)::before,
+.btn:nth-child(1)::after {
+  background: #ff7979;
+  box-shadow: 
+    0 0 5px #ff7979,
+    0 0 15px #ff7979,
+    0 0 30px #ff7979,
+    0 0 60px #ff7979;
+}
+
+/* Status Badge Styles */
+.status-badge {
+  width: 100%;
+  text-align: center;
+  color: white;
+  background: rgba(255,255,255,0.1);
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+}
+
+/* Stat Button Box */
+.oe_button_box {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.oe_stat_button {
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.1);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 15px;
+  color: white;
+  backdrop-filter: blur(5px);
+  transition: transform 0.3s ease;
+}
+
+.oe_stat_button:hover {
+  transform: scale(1.05);
+}
+
+.oe_stat_button i {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.oe_stat_button div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.oe_stat_button .stat_value {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.oe_stat_button .stat_text {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* Header Area Styles */
+.header-area {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.id-section {
+  flex: 0 0 70%;
+}
+
+.id-section label {
+  color: white;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.id-section input {
+  width: 100%;
+  background: rgba(255,255,255,0.1);
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+}
+
+.oe_avatar {
+  flex: 0 0 auto;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-left: auto;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .card {
+    width: 100%;
+    margin: 10px;
+    min-height: auto;
+  }
+  
+  .form-row {
+    flex-direction: column;
+  }
+  
+  .form-column {
+    width: 100%;
+  }
+  
+  .container-button {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .btn {
+    width: 100%;
+    padding: 20px 40px;
+  }
+  
+  .login-heading {
+    font-size: 1.5rem;
+  }
+  
+  .header-area {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .id-section {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .oe_avatar {
+    margin-left: 0;
+    align-self: center;
+  }
+  
+  .oe_button_box {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .oe_stat_button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+/* Mobile Responsive Design */
+@media screen and (max-width: 480px) {
+  .card {
+    padding: 10px;
+  }
+  
+  .form-column input,
+  .form-column select {
+    padding: 10px;
+  }
+  
+  .login-heading {
+    font-size: 1.2rem;
+  }
+}
