@@ -373,10 +373,6 @@ body::after {
   }
 
 
-  .background-circle {
-    
-  }
-
   body::before,
   body::after {
     display: none;
@@ -521,5 +517,35 @@ body {
   select,
   textarea {
     font-size: 16px;
+  }
+}
+
+@keyframes drift-circle {
+  0% {
+      transform: translateY(0) translateX(0) scale(0.7) rotate(0deg);
+  }
+  100% {
+      transform: translateY(-80px) translateX(80px) scale(1.2) rotate(360deg);
+  }
+}
+
+@keyframes bounce-circle {
+  0%, 100% {
+      transform: translateY(0) scale(0.8);
+  }
+  50% {
+      transform: translateY(-100px) scale(1.2);
+  }
+}
+
+@keyframes wobble-circle {
+  0%, 100% {
+      transform: translateX(0) rotate(0deg);
+  }
+  25% {
+      transform: translateX(-50px) rotate(-10deg);
+  }
+  75% {
+      transform: translateX(50px) rotate(10deg);
   }
 }
