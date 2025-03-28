@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -14,8 +14,8 @@ body::after {
   left: 0;
   width: 100%;
   height: 100%;
-  filter: blur(300px); /* Increased blur for softer edges */
-  opacity: 0.4; /* Reduced opacity for less intensity */
+  filter: blur(300px);
+  opacity: 0.4;
 }
 
 body::before {
@@ -53,6 +53,7 @@ body::after {
   0% {
     transform: translateY(0) translateX(0) scale(0.7);
   }
+
   100% {
     transform: translateY(-50px) translateX(50px) scale(1.2);
   }
@@ -75,16 +76,16 @@ body::after {
   width: 800px;
   min-height: 600px;
   margin: 30px;
-  box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
   border-radius: 15px;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-top: 1px solid rgba(255,255,255,0.5);
-  border-left: 1px solid rgba(255,255,255,0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(5px);
   z-index: 1;
   padding: 20px;
@@ -123,13 +124,13 @@ body::after {
   padding: 12px;
   width: 100%;
   border: none;
-  box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
-  background: rgba(255,255,255,0.1);
-  border-top: 1px solid rgba(255,255,255,0.5);
-  border-left: 1px solid rgba(255,255,255,0.5);
+  background: rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(5px);
-  z-index: 1;
+  z-index: 3;
   color: white;
   transition: transform 0.3s ease;
 }
@@ -187,13 +188,13 @@ body::after {
   border-bottom: 1px solid rgba(255, 255, 255, .1);
   border-radius: 30px;
   color: #fff;
-  z-index: 1;
+  z-index: 3;
   font-weight: 400;
   letter-spacing: 1px;
   text-decoration: none;
   overflow: hidden;
   text-transform: uppercase;
-  transition: all .3s ease-in-out;  
+  transition: all .3s ease-in-out;
   backdrop-filter: blur(15px);
 }
 
@@ -231,7 +232,7 @@ body::after {
   transition-delay: 0s;
 }
 
-.btn::before {  
+.btn::before {
   bottom: -5px;
 }
 
@@ -240,7 +241,7 @@ body::after {
 }
 
 .btn:hover::before,
-.btn:hover::after {  
+.btn:hover::after {
   height: 50%;
   width: 80%;
   border-radius: 30px;
@@ -258,7 +259,7 @@ body::after {
 .btn:nth-child(1)::before,
 .btn:nth-child(1)::after {
   background: #ff7979;
-  box-shadow: 
+  box-shadow:
     0 0 5px #ff7979,
     0 0 15px #ff7979,
     0 0 30px #ff7979,
@@ -291,7 +292,7 @@ body::after {
 .oe_stat_button {
   display: flex;
   align-items: center;
-  background: linear-gradient(rgba(139, 69, 19, 0.3), rgba(210, 105, 30, 0.3)); 
+  background: linear-gradient(rgba(139, 69, 19, 0.3), rgba(210, 105, 30, 0.3));
   border: none;
   border-radius: 10px;
   padding: 10px 15px;
@@ -346,7 +347,7 @@ body::after {
 
 .id-section input {
   width: 100%;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   border: none;
   color: white;
   padding: 10px;
@@ -366,13 +367,14 @@ body::after {
 /* Mobile Responsive Adjustments */
 @media screen and (max-width: 768px) {
   body {
-    overflow-y: auto; /* Allow vertical scrolling */
+    overflow-y: auto;
+    /* Allow vertical scrolling */
     position: relative;
   }
 
 
   .background-circle {
-    display: none;
+    
   }
 
   body::before,
@@ -385,14 +387,17 @@ body::after {
     min-height: 100vh;
     padding: 20px 10px;
     overflow-x: hidden;
+    z-index: 3;
   }
 
   .card {
-    width: 95%; 
-    max-width: 500px; 
+    width: 95%;
+    max-width: 500px;
     margin: 20px 10px;
     min-height: auto;
     padding: 15px;
+    z-index: 3;
+    backdrop-filter: none;
   }
 
   .form-row {
@@ -407,7 +412,7 @@ body::after {
   .form-column select {
     margin-top: 10px;
     padding: 10px;
-    font-size: 16px; 
+    font-size: 16px;
   }
 
   .container-button {
@@ -418,6 +423,11 @@ body::after {
   .btn {
     width: 100%;
     padding: 20px 40px;
+    backdrop-filter: none;
+  }
+
+  .btn a {
+    backdrop-filter: none;
   }
 
   .login-heading {
@@ -453,7 +463,9 @@ body::after {
   }
 
 
-  input, select, textarea {
+  input,
+  select,
+  textarea {
     font-size: 16px;
   }
 }
@@ -474,22 +486,40 @@ body::after {
   .form-column select {
     padding: 8px;
     margin-top: 8px;
+    backdrop-filter: none;
   }
 
   .btn {
     padding: 15px 30px;
   }
+
+  .status-badge {
+    backdrop-filter: none;
+  }
+
+  .oe_stat_button {
+    backdrop-filter: none;
+  }
+
+  .oe_stat_button {
+    backdrop-filter: none;
+  }
+
 }
 
 
-html, body {
+html,
+body {
   max-width: 100%;
   overflow-x: hidden;
 }
 
 /* Prevent automatic zoom on input focus for iOS */
 @media screen and (max-width: 768px) {
-  input, select, textarea {
+
+  input,
+  select,
+  textarea {
     font-size: 16px;
   }
 }
